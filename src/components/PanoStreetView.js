@@ -30,7 +30,8 @@ export default withLeaflet(
   class LeafletControl extends MapControl {
     state = {
       streetViewEnabled: false,
-      src: img
+      src: img,
+      backgroundColor: "white"
     };
     createLeafletElement(props) {
       return new DumbControl(Object.assign({}, props));
@@ -59,7 +60,8 @@ export default withLeaflet(
       const { streetViewEnabled } = this.state;
       this.setState({
         streetViewEnabled: !streetViewEnabled,
-        src: streetViewEnabled ? img : imgClicked
+        src: streetViewEnabled ? img : imgClicked,
+        backgroundColor: streetViewEnabled ? "white" : "#F5F5F5"
       });
     };
     render() {
@@ -67,13 +69,17 @@ export default withLeaflet(
         return null;
       }
       return ReactDOM.createPortal(
-        <img
+        <div
+          style={{
+            boxShadow: "1px 1px grey",
+            padding: "3px",
+            backgroundColor: this.state.backgroundColor,
+            cursor: "pointer"
+          }}
           onClick={this.buttonClicked}
-          src={this.state.src}
-          style={{ color: "red" }}
-          height="30px"
-          width
-        />,
+        >
+          Street View
+        </div>,
         this.leafletElement.getContainer()
       );
     }
