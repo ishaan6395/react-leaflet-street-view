@@ -2,7 +2,7 @@
   "name": "react-leaflet-street-view",
   "version": "1.0.1",
   "description": "This library will help access street views from leaflet maps",
-  "main": "lib/PanoStreetView.js",
+  "main": "src/components/PanoStreetView.js",
   "scripts": {
     "start": "webpack-dev-server --config=config/webpack.dev.js",
     "build": "webpack-dev-server --config=config/webpack.dev.js",

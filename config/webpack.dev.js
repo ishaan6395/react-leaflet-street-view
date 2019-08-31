@@ -1,7 +1,7 @@
 const path = require("path");
 module.exports = {
   entry: {
-    main: ["babel-polyfill", "./lib/PanoStreetView.js"]
+    main: ["babel-polyfill", "./src/components/PanoStreetView.js"]
   },
   mode: "development",
   output: {
