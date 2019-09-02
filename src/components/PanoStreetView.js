@@ -39,14 +39,14 @@ export default withLeaflet(
 
     componentDidMount() {
       super.componentDidMount();
-      let { mapref } = this.props;
+      let { streetView } = this.props;
       this.forceUpdate();
     }
 
     componentWillReceiveProps(nextProps) {
       if (!this.state.streetViewEnabled) return;
-      const { mapref } = nextProps;
-      const { latlng } = mapref;
+      const { streetView } = nextProps;
+      const { latlng } = streetView;
       const { lat, lng } = latlng;
       const url = `http://maps.google.com/?cbll=${lat},${lng}&cbp=12,20.09,,0,5&layer=c`;
       if (this.props.sameWindow) {
