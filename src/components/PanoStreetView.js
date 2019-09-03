@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { MapControl, withLeaflet } from "react-leaflet";
 import { Control, DomUtil, DomEvent } from "leaflet";
-import img from "./streetview.png";
-import imgClicked from "./streetviewclicked.png";
+
 const DumbControl = Control.extend({
   options: {
     className: "",
@@ -30,7 +29,6 @@ export default withLeaflet(
   class LeafletControl extends MapControl {
     state = {
       streetViewEnabled: false,
-      src: img,
       backgroundColor: "white"
     };
     createLeafletElement(props) {
@@ -60,7 +58,6 @@ export default withLeaflet(
       const { streetViewEnabled } = this.state;
       this.setState({
         streetViewEnabled: !streetViewEnabled,
-        src: streetViewEnabled ? img : imgClicked,
         backgroundColor: streetViewEnabled ? "white" : "#F5F5F5"
       });
     };
@@ -69,17 +66,21 @@ export default withLeaflet(
         return null;
       }
       return ReactDOM.createPortal(
-        <div
-          style={{
-            boxShadow: "1px 1px grey",
-            padding: "3px",
-            backgroundColor: this.state.backgroundColor,
-            cursor: "pointer"
-          }}
-          onClick={this.buttonClicked}
-        >
-          Street View
-        </div>,
+        (
+          <div onClick={this.buttonClicked}>{this.props.children}</div> //If child is available render child
+        ) || (
+          <div //Else render default button
+            style={{
+              boxShadow: "1px 1px grey",
+              padding: "3px",
+              backgroundColor: this.state.backgroundColor,
+              cursor: "pointer"
+            }}
+            onClick={this.buttonClicked}
+          >
+            Street View
+          </div>
+        ),
         this.leafletElement.getContainer()
       );
     }

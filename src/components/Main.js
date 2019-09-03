@@ -19,7 +19,9 @@ class Main extends Component {
           <PanoStreetView
             streetView={this.state.streetView}
             position="bottomright"
-          />
+          >
+            <input type="button" value="my button" />
+          </PanoStreetView>
         </Map>
       </Fragment>
     );
