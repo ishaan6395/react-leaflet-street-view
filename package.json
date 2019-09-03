@@ -11,7 +11,11 @@
   "keywords": [
     "react-leaflet",
     "react leaflet",
-    "leaflet"
+    "leaflet",
+    "street-view",
+    "panoramic view",
+    "google street view",
+    "leaflet panoramic view"
   ],
   "author": "Ishaan Thakker",
   "license": "MIT",
