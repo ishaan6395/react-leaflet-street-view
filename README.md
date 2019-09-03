@@ -80,3 +80,13 @@ export default Main;
 streetView  | this.state.streetView | N/A |
 position  | 'topleft' or 'topright' or 'bottomleft' or 'bottomright' |  N/A |
 sameWindow | boolean | Opens all street views in same tab if set to true |
+
+**Using your own react component instead of inbuilt Street View Button**
+```javascript
+<PanoStreetView
+  position='bottomleft'
+  streetView={this.state.streetView}
+>
+  <CustomReactComponent />
+</PanoStreetView
+```
