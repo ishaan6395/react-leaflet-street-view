@@ -75,7 +75,8 @@ export default Main;
 
 **Properties required in PanoStreetView component**
 
-**Property** | **Value**
-------      | --------
-streetView  | this.state.streetView
-position  | 'topleft' or 'topright' or 'bottomleft' or 'bottomright'
+**Property** | **Value** | **Description** | 
+------      | --------  | ------ | 
+streetView  | this.state.streetView | N/A |
+position  | 'topleft' or 'topright' or 'bottomleft' or 'bottomright' |  N/A |
+sameWindow | boolean | Opens all street views in same tab if set to true |
