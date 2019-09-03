@@ -66,9 +66,9 @@ export default withLeaflet(
         return null;
       }
       return ReactDOM.createPortal(
-        (
-          <div onClick={this.buttonClicked}>{this.props.children}</div> //If child is available render child
-        ) || (
+        (this.props.children && (
+          <div onClick={this.buttonClicked}>{this.props.children}</div>
+        )) || ( //If child is available render child
           <div //Else render default button
             style={{
               boxShadow: "1px 1px grey",
