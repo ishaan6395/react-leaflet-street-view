@@ -30,7 +30,7 @@ module.exports = {
             loader: "style-loader"
           },
           {
-            loader: "css-loaer"
+            loader: "css-loader"
           }
         ]
       },

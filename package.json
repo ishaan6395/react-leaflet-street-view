@@ -15,7 +15,9 @@
     "street-view",
     "panoramic view",
     "google street view",
-    "leaflet panoramic view"
+    "leaflet panoramic view",
+    "street view",
+    "leaflet 3d view"
   ],
   "author": "Ishaan Thakker",
   "license": "MIT",
